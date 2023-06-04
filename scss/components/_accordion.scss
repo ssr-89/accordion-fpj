@@ -62,6 +62,8 @@
     .accordion-block__content {
       background-color: var(--red-content);
       pre {
+        font-family: monospace;
+        font-size: 14px;
         color: rgba(255, 255, 255, 1);
 
         i {

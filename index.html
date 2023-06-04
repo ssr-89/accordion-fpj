@@ -219,12 +219,12 @@
               <div class="accordion-block__content">
                 <pre>
 "use strict"
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () =&gt; {
   <i>// Коллекция дата-атрибутов data-spollers</i>
   const spollersArray = document.querySelectorAll("[data-spollers]");
 
   <i>// Проверка наличия элементов с данным дата-атрибутом</i>
-  if (spollersArray.length > 0) {
+  if (spollersArray.length &gt; 0) {
 
     <i>// Получение обычных спойлеров</i>
     <i>// Array.from переводит в массив, а далее работаем с методом filter</i>
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     <i>// Инициализацтя обычных спойлеров (активация)</i>
-    if (spollersRegular.length > 0) {
+    if (spollersRegular.length &gt; 0) {
       initSpollers(spollersRegular);
     }
 
@@ -249,11 +249,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <i>// Инициализация спойлеров с медиа запросами</i>
     <i>// проверка наличия элементов с данным дата-атрибутом</i>
-    if (spollersMedia.length > 0) {
+    if (spollersMedia.length &gt; 0) {
 
       const breakpointsArray = []; <i>// пустой массив</i>
 
-      spollersMedia.forEach(item => {
+      spollersMedia.forEach(item =&gt; {
         const params = item.dataset.spollers; <i>// получение элементов с data-sollers</i>
         const breakpoint = {}; <i>// пустой объект</i>
 
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       <i>// Работаем с каждым брейкпоинтом</i>
-      /* 3 */mediaQueries.forEach(breakpoint => {
+      /* 3 */mediaQueries.forEach(breakpoint =&gt; {
 
         <i>// с помощью split разделяются значения на три части и преобразует в массив</i>
         const paramsArray = breakpoint.split(",");
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     <i>// Инициализация</i>
     function initSpollers(spollersArray, matchMedia = false) { <i>// массив объектов и константа matchMedia</i>
-      spollersArray.forEach(spollersBlock => { <i>// spollersBlock каждый элемент массива</i>
+      spollersArray.forEach(spollersBlock =&gt; { <i>// spollersBlock каждый элемент массива</i>
         <i>// spollersBlock.item - это breakpoint.item = item; (650,min)</i>
         spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
 
@@ -357,9 +357,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]'); <i>// получаем все заголовки спойлеров</i>
 
       <i>// проверка наличия заголовков спойлеров</i>
-      if (spollerTitles.length > 0) {
+      if (spollerTitles.length &gt; 0) {
 
-        spollerTitles.forEach(spollerTitle => {
+        spollerTitles.forEach(spollerTitle =&gt; {
 
           if (hideSpollerBody) {
             <i>// если hideSpollerBody true, тогда у заголовка убираем tabindex</i>
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*===============================================================*/
   <i>// SlideToggle</i>
-  let _slideUp = (target, duration = 500) => {
+  let _slideUp = (target, duration = 500) =&gt; {
     if (!target.classList.contains('_slide')) { <i>// если у объекта нет тех. класса _slide</i>
       target.classList.add('_slide'); <i>// добавляет класс _slide</i>
       target.style.transitionProperty = 'height, margin, padding';
@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
       target.style.paddingBottom = 0;
       target.style.marginTop = 0;
       target.style.marginBottom = 0;
-      window.setTimeout(() => {
+      window.setTimeout(() =&gt; {
         target.hidden = true;
         target.style.removeProperty('height');
         target.style.removeProperty('padding-top');
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, duration);
     }
   }
-  let _slideDown = (target, duration = 500) => {
+  let _slideDown = (target, duration = 500) =&gt; {
     if (!target.classList.contains('_slide')) {
       target.classList.add('_slide');
       if (target.hidden) {
@@ -472,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
       target.style.removeProperty('padding-bottom');
       target.style.removeProperty('margin-top');
       target.style.removeProperty('margin-bottom');
-      window.setTimeout(() => {
+      window.setTimeout(() =&gt; {
         target.style.removeProperty('height');
         target.style.removeProperty('overflow');
         target.style.removeProperty('transition-duration');
@@ -481,7 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, duration);
     }
   }
-  let _slideToggle = (target, duration = 500) => {
+  let _slideToggle = (target, duration = 500) =&gt; {
     if (target.hidden) {
       return _slideDown(target, duration); <i>// открыто - скрыть</i>
     } else {

@@ -754,6 +754,8 @@ hr {
   background-color: var(--red-content);
 }
 .accordion-block--1 .accordion-block__content pre {
+  font-family: monospace;
+  font-size: 14px;
   color: rgb(255, 255, 255);
 }
 .accordion-block--1 .accordion-block__content pre i {
