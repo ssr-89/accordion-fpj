@@ -753,6 +753,12 @@ hr {
 .accordion-block--1 .accordion-block__content {
   background-color: var(--red-content);
 }
+.accordion-block--1 .accordion-block__content pre {
+  color: rgb(255, 255, 255);
+}
+.accordion-block--1 .accordion-block__content pre i {
+  color: yellowgreen;
+}
 .accordion-block--2 .accordion-block__item {
   background-color: var(--green);
 }

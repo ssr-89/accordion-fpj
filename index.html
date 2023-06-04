@@ -48,21 +48,462 @@
           <h2 class="accordion__title title">Accordion</h2>
           <div class="accordion__block accordion-block accordion-block--1" data-one-spoller data-spollers>
             <div class="accordion-block__item">
-              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Обычный спойлер №1</button>
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">HTML</button>
               <div class="accordion-block__content">
-                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Выйти языком свой над, злых ее меня раз буквоград рукописи предложения жизни родного назад продолжил предупредила? Вскоре всеми своих точках?
+                <pre>
+&lt;section id="accordion" class="accordion"&gt;
+  &lt;div class="accordion__container"&gt;
+    &lt;h2 class="accordion__title title"&gt;Accordion&lt;/h2&gt;
+    &lt;div class="accordion__block accordion-block accordion-block--1" data-one-spoller data-spollers&gt;
+      &lt;div class="accordion-block__item"&gt;
+        &lt;button class="accordion-block__title btn" data-spoller tabindex="-1" type="button"&gt;Обычный спойлер №1&lt;/button&gt;
+        &lt;div class="accordion-block__content"&gt;
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="accordion-block__item"&gt;
+        &lt;button class="accordion-block__title btn" data-spoller tabindex="-1" type="button"&gt;Обычный спойлер №2&lt;/button&gt;
+        &lt;div class="accordion-block__content"&gt;
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="accordion-block__item"&gt;
+        &lt;button class="accordion-block__title btn" data-spoller tabindex="-1" type="button"&gt;Обычный спойлер №3&lt;/button&gt;
+        &lt;div class="accordion-block__content"&gt;
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class="accordion__block accordion-block accordion-block--2" data-spollers="650,min"&gt;
+      &lt;div class="accordion-block__item"&gt;
+        &lt;button class="accordion-block__title btn" data-spoller tabindex="-1" type="button"&gt;
+          Спойлер работает на экранах &gt;= 650px
+        &lt;/button&gt;
+        &lt;div class="accordion-block__content"&gt;
+          Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class="accordion__block accordion-block accordion-block--3" data-spollers="800,max"&gt;
+      &lt;div class="accordion-block__item"&gt;
+        &lt;button class="accordion-block__title btn" data-spoller tabindex="-1" type="button"&gt;
+          Спойлер №1 работает на экранах &lt;= 850px
+        &lt;/button&gt;
+        &lt;div class="accordion-block__content"&gt;
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="accordion-block__item"&gt;
+        &lt;button class="accordion-block__title btn" data-spoller tabindex="-1" type="button"&gt;
+          Спойлер №2 работает на экранах &lt;= 850px
+        &lt;/button&gt;
+        &lt;div class="accordion-block__content"&gt;
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+                </pre>
               </div>
             </div>
             <div class="accordion-block__item">
-              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Обычный спойлер №2</button>
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">CSS (SCSS)</button>
               <div class="accordion-block__content">
-                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Продолжил единственное о подзаголовок, большой строчка это от всех переписывается свой толку что путь повстречался дал дорогу силуэт агентство проектах одна.
+                <pre>
+:root {
+  --main-color: #333;
+  --second-color: #eee;
+  --red: rgba(80, 0, 0, 1);
+  --red-content: rgb(100, 0, 0);
+  --green: rgb(0, 100, 100);
+  --green-content: rgb(0, 128, 128);
+  --violet: rgba(50, 40, 100, 1);
+  --violet-content: rgba(60, 50, 110, 1);
+}
+
+.accordion {
+  &__title {
+    margin-bottom: 20px;
+  }
+  &-block {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__title {
+      position: relative;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      cursor: default;
+    }
+    &._init {
+      .accordion-block__title {
+        padding: 10px 40px 10px 10px;
+        cursor: pointer;
+      }
+    }
+    &._init {
+      .accordion-block__title::before,
+      .accordion-block__title::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        width: 20px;
+        height: 1px;
+        background-color: var(--second-color);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    &._init {
+      .accordion-block__title::after {
+        transform: rotate(-90deg);
+      }
+    }
+    &._init {
+      .accordion-block__title._active::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    &__content {
+      padding: 10px;
+    }
+  }
+
+  &-block--1 {
+    .accordion-block__item {
+      background-color: var(--red);
+    }
+    .accordion-block__content {
+      background-color: var(--red-content);
+    }
+  }
+  &-block--2 {
+    .accordion-block__item {
+      background-color: var(--green);
+    }
+    .accordion-block__content {
+      background-color: var(--green-content);
+    }
+  }
+  &-block--3 {
+    .accordion-block__item {
+      background-color: var(--violet);
+    }
+    .accordion-block__content {
+      background-color: var(--violet-content);
+    }
+  }
+}
+                </pre>
               </div>
             </div>
             <div class="accordion-block__item">
-              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Обычный спойлер №3</button>
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">JS</button>
               <div class="accordion-block__content">
-                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Несколько единственное он о рукописи переписали запятой рукопись большого прямо встретил жизни переулка, страна которой, своих вершину продолжил то всеми?
+                <pre>
+"use strict"
+document.addEventListener("DOMContentLoaded", () => {
+  <i>// Коллекция дата-атрибутов data-spollers</i>
+  const spollersArray = document.querySelectorAll("[data-spollers]");
+
+  <i>// Проверка наличия элементов с данным дата-атрибутом</i>
+  if (spollersArray.length > 0) {
+
+    <i>// Получение обычных спойлеров</i>
+    <i>// Array.from переводит в массив, а далее работаем с методом filter</i>
+    const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
+      <i>// с помощью split разделяются значения data-spollers и тем самым проверяется наличие значения</i>
+      <i>// item - это (650,min)</i>
+      return !item.dataset.spollers.split(",")[0];
+    });
+
+    <i>// Инициализацтя обычных спойлеров (активация)</i>
+    if (spollersRegular.length > 0) {
+      initSpollers(spollersRegular);
+    }
+
+    <i>// Получение спойлеров с медиа запросами</i>
+    <i>// Array.from переводит в массив, а далее работаем с методом filter</i>
+    const spollersMedia = Array.from(spollersArray).filter(function (item, index, self) {
+      <i>// с помощью split разделяются значения data-spollers и тем самым проверяется наличие значения</i>
+      <i>// item - это (650,min)</i>
+      return item.dataset.spollers.split(",")[0];
+    });
+
+    <i>// Инициализация спойлеров с медиа запросами</i>
+    <i>// проверка наличия элементов с данным дата-атрибутом</i>
+    if (spollersMedia.length > 0) {
+
+      const breakpointsArray = []; <i>// пустой массив</i>
+
+      spollersMedia.forEach(item => {
+        const params = item.dataset.spollers; <i>// получение элементов с data-sollers</i>
+        const breakpoint = {}; <i>// пустой объект</i>
+
+        <i>// paramsArray - массив со значениями data-spollers</i>
+        const paramsArray = params.split(","); <i>// С помощью split разделяются значения data-spollers</i>
+
+        <i>// создание значений для объекта breakpoint</i>
+        breakpoint.value = paramsArray[0]; <i>// первый параметр data-spollers</i>
+
+        <i>// второй параметр data-spollers</i>
+        <i>// trim убирает пробелы вокруг</i>
+        <i>// по умолчанию "max", если не указано иное</i>
+        breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max";
+
+        <i>// item - это (650,min)</i>
+        breakpoint.item = item;
+
+        <i>// объект добавялется в массив</i>
+        breakpointsArray.push(breakpoint);
+      });
+
+
+      /*
+      1 mediaQueries - это breakpointsArray и преобразуется в строку (пример: '"(min-width: 650px),", "650,", "min"')
+      2 mediaQueries фильтруется от повторения (если правильно понял)
+      3 Далее breakpoint это элемент mediaQueries
+      */
+
+
+      <i>// Получаем уникальные брейкпоинты</i>
+      <i>// map - переделываем массив в строку с медиа-запросами</i>
+      /* 1 */let mediaQueries = breakpointsArray.map(function (item) {
+        <i>// Здесь item - это breakpoint из breakpointsArray</i>
+        return "(" + item.type + "-width: " + item.value + "px)," + item.value + "," + item.type;
+      });
+      /* 2 */mediaQueries = mediaQueries.filter(function (item, index, self) {
+        return self.indexOf(item) === index;
+      });
+
+      <i>// Работаем с каждым брейкпоинтом</i>
+      /* 3 */mediaQueries.forEach(breakpoint => {
+
+        <i>// с помощью split разделяются значения на три части и преобразует в массив</i>
+        const paramsArray = breakpoint.split(",");
+        const mediaBreakpoint = paramsArray[1]; <i>// первый параметр data-spollers (пример: 650)</i>
+        const mediaType = paramsArray[2]; <i>// второй параметр data-spollers (пример: min)</i>
+
+        <i>// window слушает ширину экрана и отрабатывает, если сработал нужный брейкпоинт</i>
+        <i>// в paramsArray[0] индексом берётся параметр из mediaQueries(breakpoint) выше (пример: "min-width: 650px")</i>
+        const matchMedia = window.matchMedia(paramsArray[0]);
+
+        <i>// Объекты с нужными условиями</i>
+        const spollersArray = breakpointsArray.filter(function (item) {
+          if (item.value === mediaBreakpoint && item.type === mediaType) {
+            return true;
+          }
+        });
+
+        <i>// Событие</i>
+        matchMedia.addListener(function () {
+          <i>// spollersArray - собранный массив объектов</i>
+          <i>// matchMedia - слушание ширины экрана, иными словами выдаёт значения data-spollers</i>
+          initSpollers(spollersArray, matchMedia);
+        });
+
+        <i>// чтобы заработало сразу при загрузке страницы</i>
+        initSpollers(spollersArray, matchMedia);
+      });
+    }
+    <i>// Инициализация</i>
+    function initSpollers(spollersArray, matchMedia = false) { <i>// массив объектов и константа matchMedia</i>
+      spollersArray.forEach(spollersBlock => { <i>// spollersBlock каждый элемент массива</i>
+        <i>// spollersBlock.item - это breakpoint.item = item; (650,min)</i>
+        spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+
+        <i>// matchMedia.matches вернёт true, если ширина экрана больше или равен пример: 650px</i>
+        <i>// !matchMedia - для спойлеров без значений data-spollers</i>
+        if (matchMedia.matches || !matchMedia) {
+          spollersBlock.classList.add('_init'); <i>// присваиваем технический класс</i>
+
+          <i>// вызывается функция контентной части</i>
+          initSpollerBody(spollersBlock);
+          spollersBlock.addEventListener("click", setSpollerAction); <i>// событие клик</i>
+        }
+
+
+        else {
+          spollersBlock.classList.remove('_init');
+
+          <i>// дезактивируем функцию</i>
+          initSpollerBody(spollersBlock, false); <i>// передаём в spollersBlock объект</i>
+          spollersBlock.removeEventListener("click", setSpollerAction); <i>// убираем событие клик</i>
+        }
+      });
+    }
+
+    <i>// Работа с контентом</i>
+    <i>// если нет подходящих парамтеров для активации спойлера, то в hideSpollerBody передаётся false</i>
+    function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+
+      const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]'); <i>// получаем все заголовки спойлеров</i>
+
+      <i>// проверка наличия заголовков спойлеров</i>
+      if (spollerTitles.length > 0) {
+
+        spollerTitles.forEach(spollerTitle => {
+
+          if (hideSpollerBody) {
+            <i>// если hideSpollerBody true, тогда у заголовка убираем tabindex</i>
+            spollerTitle.removeAttribute('tabindex');
+
+            <i>// если нет класса _active</i>
+            if (!spollerTitle.classList.contains('_active')) {
+              <i>// тогда скрываем контентную часть с помощью nextElementSibling (т.е., следующий элемент после заголовка)</i>
+              spollerTitle.nextElementSibling.hidden = true;
+            }
+          }
+          <i>// если hideSpollerBody false</i>
+          else {
+            <i>// tabindex добавляем, чтобы спойлеры были обычными блоками при недостижения нужного брейкпоинта</i>
+            spollerTitle.setAttribute('tabindex', '-1');
+
+            <i>// из-за этого атрибута в Google Chrome спойлер дёргается при закрывании</i>
+            spollerTitle.nextElementSibling.hidden = false;
+          }
+        });
+      }
+    }
+    function setSpollerAction(e) { <i>// клик по кнопке</i>
+      const el = e.target; <i>// нажатый объект</i>
+
+      <i>// если у объекта есть data-spoller || у ближайшего родителя</i>
+      if (el.hasAttribute('data-spoller') || el.closest('[data-spoller]')) {
+
+        <i>// элемент с data-spoller || ближайший родитель с data-spoller</i>
+        const spollerTitle = el.hasAttribute('data-spoller') ? el : el.closest('[data-spoller]');
+
+        <i>// получаем родительский блок выбранного спойлера</i>
+        const spollersBlock = spollerTitle.closest('[data-spollers]');
+
+        <i>// если у оболочки есть data-one-spoller, то true</i>
+        const oneSpoller = spollersBlock.hasAttribute('data-one-spoller') ? true : false;
+
+        <i>// проверка родителей спойлера на наличие класса _slide</i>
+        if (!spollersBlock.querySelectorAll('._slide').length) {
+
+          <i>// если у главного блока есть data-one-spoller и у нажатой кнопки нет класс _active</i>
+          if (oneSpoller && !spollerTitle.classList.contains('_active')) {
+            hideSpollersBody(spollersBlock); <i>// все остальные спойлеры скрыть</i>
+          }
+          spollerTitle.classList.toggle('_active'); <i>// спойлеру добавляем или убираем класс _active</i>
+          _slideToggle(spollerTitle.nextElementSibling, 500);
+        }
+        e.preventDefault();
+      }
+    }
+    function hideSpollersBody(spollersBlock) {
+      <i>// активный и открытый спойлер</i>
+      const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._active');
+
+      if (spollerActiveTitle) {
+        spollerActiveTitle.classList.remove('_active'); <i>// убираем класс _active</i>
+        _slideUp(spollerActiveTitle.nextElementSibling, 500);
+      }
+    }
+  }
+
+
+  /*===============================================================*/
+  <i>// SlideToggle</i>
+  let _slideUp = (target, duration = 500) => {
+    if (!target.classList.contains('_slide')) { <i>// если у объекта нет тех. класса _slide</i>
+      target.classList.add('_slide'); <i>// добавляет класс _slide</i>
+      target.style.transitionProperty = 'height, margin, padding';
+      target.style.transitionDuration = duration + 'ms';
+      target.style.height = target.offsetHeight + 'px';
+      target.offsetHeight;
+      target.style.overflow = 'hidden';
+      target.style.height = 0;
+      target.style.paddingTop = 0;
+      target.style.paddingBottom = 0;
+      target.style.marginTop = 0;
+      target.style.marginBottom = 0;
+      window.setTimeout(() => {
+        target.hidden = true;
+        target.style.removeProperty('height');
+        target.style.removeProperty('padding-top');
+        target.style.removeProperty('padding-bottom');
+        target.style.removeProperty('margin-top');
+        target.style.removeProperty('margin-bottom');
+        target.style.removeProperty('overflow');
+        target.style.removeProperty('transition-duration');
+        target.style.removeProperty('transition-property');
+        target.classList.remove('_slide');
+      }, duration);
+    }
+  }
+  let _slideDown = (target, duration = 500) => {
+    if (!target.classList.contains('_slide')) {
+      target.classList.add('_slide');
+      if (target.hidden) {
+        target.hidden = false;
+      }
+      let height = target.offsetHeight;
+      target.style.overflow = 'hidden';
+      target.style.height = 0;
+      target.style.paddingTop = 0;
+      target.style.paddingBottom = 0;
+      target.style.marginTop = 0;
+      target.style.marginBottom = 0;
+      target.offsetHeight;
+      target.style.transitionProperty = 'height, margin, padding';
+      target.style.transitionDuration = duration + 'ms';
+      target.style.height = height + 'px';
+      target.style.removeProperty('padding-top');
+      target.style.removeProperty('padding-bottom');
+      target.style.removeProperty('margin-top');
+      target.style.removeProperty('margin-bottom');
+      window.setTimeout(() => {
+        target.style.removeProperty('height');
+        target.style.removeProperty('overflow');
+        target.style.removeProperty('transition-duration');
+        target.style.removeProperty('transition-property');
+        target.classList.remove('_slide');
+      }, duration);
+    }
+  }
+  let _slideToggle = (target, duration = 500) => {
+    if (target.hidden) {
+      return _slideDown(target, duration); <i>// открыто - скрыть</i>
+    } else {
+      return _slideUp(target, duration); <i>// закрыто - показать</i>
+    }
+  }
+
+  /*===============================================================*/
+  /*
+  Для родителя спойлеров пишем атрибут data-spollers
+  Для получения обычных спойлеров в data-spollers не указываются значения
+
+  Для заголовков спойлеров пишем атрибут data-spoller
+  Если нужно включить/выключить работу спойлеров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
+  Например:
+  data-spollers-"992,max" -спойлеры будут рабоать только на экранах меньше или равно 992px
+  data-spollers-"768,max" -спойлеры будут рабоать только на экранах меньше или равно 768px
+
+  Если нужно чтобы в блоке открывался только один спойлер добавялем атрибут data-one-spoller
+  */
+});
+                </pre>
               </div>
             </div>
           </div>

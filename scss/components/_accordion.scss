@@ -61,6 +61,13 @@
     }
     .accordion-block__content {
       background-color: var(--red-content);
+      pre {
+        color: rgba(255, 255, 255, 1);
+
+        i {
+          color: yellowgreen;
+        }
+      }
     }
   }
   &-block--2 {
