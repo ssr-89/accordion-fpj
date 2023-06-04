@@ -1,0 +1,10 @@
+@import "fonts"; /* шрифты */
+@import "vars"; /* переменные */
+@import "mixins"; /* миксины */
+@import "vendors"; /* в vendor прописывается @import "./vendors/normalize.css" или "./vendors/swiper-min.css" */
+@import "settings"; /* сбросы и общие настройки */
+
+@import "./components/header";
+@import "./components/hero";
+@import "./components/accordion";
+@import "./components/footer";

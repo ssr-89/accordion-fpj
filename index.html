@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link type="font/woff2" href="fonts/Exo20-Thin.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-ExtraLight.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-Light.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-Regular.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-Medium.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-SemiBold.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-Bold.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-ExtraBold.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="fonts/Exo20-Black.woff" rel="preload" as="font" crossorigin>
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/app.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper">
+    <header id="header" class="header"></header>
+    <main id="main" class="main">
+      <section id="hero" class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title title">
+            Accordion от&nbsp;Фрилансера по&nbsp;жизни
+          </h1>
+          <div class="hero__video hero-video" data-video="https://youtu.be/0fg9bZcL1RM">
+            <img class="hero-video__img" src="#" alt="video">
+            <button class="hero-video__play btn">
+              <svg width="68" height="48" viewBox="0 0 68 48">
+                <path class="hero-video__play-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,
+                7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,
+                5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path>
+                <path class="hero-video__play-icon" d="M 45,24 27,14 27,34"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="accordion" class="accordion">
+        <div class="accordion__container">
+          <h2 class="accordion__title title">Accordion</h2>
+          <div class="accordion__block accordion-block accordion-block--1" data-one-spoller data-spollers>
+            <div class="accordion-block__item">
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Обычный спойлер №1</button>
+              <div class="accordion-block__content">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Выйти языком свой над, злых ее меня раз буквоград рукописи предложения жизни родного назад продолжил предупредила? Вскоре всеми своих точках?
+              </div>
+            </div>
+            <div class="accordion-block__item">
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Обычный спойлер №2</button>
+              <div class="accordion-block__content">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Продолжил единственное о подзаголовок, большой строчка это от всех переписывается свой толку что путь повстречался дал дорогу силуэт агентство проектах одна.
+              </div>
+            </div>
+            <div class="accordion-block__item">
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Обычный спойлер №3</button>
+              <div class="accordion-block__content">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Несколько единственное он о рукописи переписали запятой рукопись большого прямо встретил жизни переулка, страна которой, своих вершину продолжил то всеми?
+              </div>
+            </div>
+          </div>
+          <div class="accordion__block accordion-block accordion-block--2" data-spollers="650,min">
+            <div class="accordion-block__item">
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Спойлер работает на экранах &gt;= 650px</button>
+              <div class="accordion-block__content">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Его это семантика грустный речью? Рукописи однажды если взгляд домах, вдали раз речью одна, даже бросил коварный встретил языком текстами.
+              </div>
+            </div>
+          </div>
+          <div class="accordion__block accordion-block accordion-block--3" data-spollers="800,max">
+            <div class="accordion-block__item">
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Спойлер №1 работает на экранах &lt;= 850px</button>
+              <div class="accordion-block__content">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком которой продолжил бросил взобравшись парадигматическая lorem рыбными решила, образ там переписали выйти города встретил его вершину, журчит точках взгляд.
+              </div>
+            </div>
+            <div class="accordion-block__item">
+              <button class="accordion-block__title btn" data-spoller tabindex="-1" type="button">Спойлер №2 работает на экранах &lt;= 850px</button>
+              <div class="accordion-block__content">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Возвращайся, заголовок одна. Курсивных, пустился. Лучше, дороге предложения единственное залетают она если, домах свой всеми которое использовало, дорогу своих первую!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer">
+      FOOTER
+    </footer>
+  </div>
+</body>
+
+</html>

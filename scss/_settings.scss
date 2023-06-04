@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  line-height: 1;
+  outline: none;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2", "Trebuchet MS", Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+body.lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+/*==================================================*/
+/* прижатие футера к низу */
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
+}
+.main {
+  flex: 1 1 auto;
+}
+/*==================================================*/
+.page {
+  background-color: var(--light);
+}
+.page-gray {
+  background-color: var(--light-gray);
+}
+hr {
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 100%;
+  color: inherit;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.img {
+  /* display: block; */
+  vertical-align: top;
+  max-width: 100%;
+}
+.input {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  resize: none;
+}
+.link {
+  text-decoration: none;
+  font-size: 100%;
+  color: inherit;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.table {
+  border-collapse: collapse;
+}
+.title,
+.text {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.pre {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: 1;
+}
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 1220px;
+}
+
+.source-link {
+  position: relative;
+  font-weight: bold;
+  color: blue;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--light);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--medium-black);
+}
+
+/*TABS*/
+.tabs-btns {
+  font-size: 0;
+}
+.tabs-btn {
+  padding: 10px 20px;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-size: 1.2rem;
+  color: var(--light);
+}
+.tabs-btn.open-tabs-btn {
+  background-color: rgba(0, 128, 128, 1);
+}
+.tabs-items {
+  position: relative;
+}
+.tabs-item {
+  opacity: 0;
+  visibility: hidden;
+  background-color: teal;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, height 0.3s ease-in-out;
+  height: 0;
+  color: var(--light);
+}
+.tabs-item.open-tabs-item {
+  padding: 20px 20px 0;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+.tabs-item__pre {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  font-size: 0;
+  transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+.tabs-item.open-tabs-item .tabs-item__pre {
+  height: auto;
+  font-size: 16px;
+}
+.tabs-item__text {
+  margin-bottom: 10px;
+}
+.color-yellow {
+  color: yellow;
+}
+.color-brown {
+  color: brown;
+}
+
+/*MODAL*/
+.modal-btn {
+  padding: 5px 10px;
+  background-color: var(--dark);
+  color: var(--light);
+}
+.modals {
+  &-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+    .modal-card {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      background-color: var(--light);
+
+      & pre {
+        margin: 0;
+        padding: 20px;
+        max-height: 90vh;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+    }
+  }
+  &-overlay--visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+
+    .modal-card--visible {
+      display: flex;
+    }
+  }
+}
